@@ -9,42 +9,69 @@ import UIKit
 
 class LaunchScreenViewController: UIViewController {
     
-    lazy var welcomeLabel : UILabel = {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-        label.text = "WELCOME"
-        label.textAlignment = .center
-        label.backgroundColor = .red
-        label.translatesAutoresizingMaskIntoConstraints = false
+    //    lazy var welcomeLabel : UILabel = {
+    //        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+    //        label.text = "WELCOME"
+    //        label.font = UIFont(name: "AppleSDGothicNeo-Thin", size: 30)
+    //        label.textAlignment = .center
+    //        label.textColor = .white
+    //        label.backgroundColor = #colorLiteral(red: 0.03614688292, green: 0.09370104223, blue: 0.5110729933, alpha: 1)
+    //        label.translatesAutoresizingMaskIntoConstraints = false
+    //
+    //        return label
+    //
+    //
+    //
+    //    }()
+    
+    lazy var logoImage: UIImageView = {
+        let logo = UIImageView()
+        logo.image = UIImage(named: "DMELogo")
+        logo.layer.zPosition = 1
         
-        return label
-        
-        
+        return logo
         
     }()
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
-        self.view.addSubview(welcomeLabel)
+        view.backgroundColor = #colorLiteral(red: 0.102643542, green: 0.1917873919, blue: 0.3815593719, alpha: 1)
+        // self.view.addSubview(welcomeLabel)
+        // setLabelConstraints()
+        self.view.addSubview(logoImage)
         setLogoConstraints()
         
-
+        
         
     }
+    
+    //    func setLabelConstraints() {
+    //        welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
+    //        NSLayoutConstraint.activate([
+    //            welcomeLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: (self.view.bounds.height / 8)),
+    //            welcomeLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+    //
+    //
+    //        ])
+    //    }
     
     func setLogoConstraints() {
-        welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
+        logoImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            welcomeLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: (self.view.bounds.height / 8)),
-            welcomeLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
-        
-        
+            logoImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoImage.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            logoImage.widthAnchor.constraint(equalToConstant: 125),
+            logoImage.heightAnchor.constraint(equalToConstant: 125)
+            
+            
         ])
+        
+        
     }
     
-        
-
-   
+    
+    
+    
 }
