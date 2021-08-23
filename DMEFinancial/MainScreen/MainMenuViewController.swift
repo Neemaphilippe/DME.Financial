@@ -20,7 +20,8 @@ class MainMenuViewController: UIViewController {
         button.setTitle("About Us", for: .normal)
         button.addTarget(self, action: #selector(aboutUsButtonPressed), for: .touchUpInside)
         button.titleLabel?.adjustsFontSizeToFitWidth = true
-        button.backgroundColor = .red
+        button.backgroundColor = #colorLiteral(red: 0.03614688292, green: 0.09370104223, blue: 0.5110729933, alpha: 1)
+        button.titleLabel?.font = UIFont(name: "MalayalamSangamMN-Bold", size: 24)
 
         return button
     }()
@@ -31,8 +32,9 @@ class MainMenuViewController: UIViewController {
         button.layer.borderWidth = 1
         button.setTitle("Services ", for: .normal)
         button.addTarget(self, action: #selector(servicesButtonPressed), for: .touchUpInside)
-        button.backgroundColor = .red
+        button.backgroundColor = #colorLiteral(red: 0.03614688292, green: 0.09370104223, blue: 0.5110729933, alpha: 1)
         button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.titleLabel?.font = UIFont(name: "MalayalamSangamMN-Bold", size: 24)
         return button
     }()
     
@@ -42,15 +44,16 @@ class MainMenuViewController: UIViewController {
         button.layer.borderWidth = 1
         button.setTitle("Schedule an Appointment", for: .normal)
         button.addTarget(self, action: #selector(appointmentButtonPressed), for: .touchUpInside)
-        button.backgroundColor = .red
+        button.backgroundColor = #colorLiteral(red: 0.03614688292, green: 0.09370104223, blue: 0.5110729933, alpha: 1)
         button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.titleLabel?.font = UIFont(name: "MalayalamSangamMN-Bold", size: 24)
         return button
     }()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.102643542, green: 0.1917873919, blue: 0.3815593719, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.addSubview(aboutUsButton)
         view.addSubview(servicesButton)
         view.addSubview(scheduleAppointmentButton)
