@@ -71,14 +71,56 @@ class MainMenuViewController: UIViewController {
     
     @objc func aboutUsButtonPressed() {
         // segue to about us detail vc
+        let aboutUsVC = AboutUsViewController()
+        
+        let navigationController = UINavigationController(rootViewController: aboutUsVC)
+        navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.isHidden = true
+        navigationController.interactivePopGestureRecognizer?.isEnabled = false
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+            let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window
+            else {return}
+        UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
+            window.rootViewController = navigationController
+        }, completion: nil)
+        
     }
     
     @objc func servicesButtonPressed() {
-        // segue to servicesoffered vc of table/collection view
+        // segue to services offered vc of table/collection view
+        let servicesOffered = ServicesOfferedViewController()
+        
+        let navigationController = UINavigationController(rootViewController: servicesOffered)
+        navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.isHidden = true
+        navigationController.interactivePopGestureRecognizer?.isEnabled = false
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window
+        else {return}
+        UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
+            window.rootViewController = navigationController
+        }, completion: nil)
+        
+        
     }
     
     @objc func appointmentButtonPressed() {
-        // segue to appointments/calendar
+        let scheduleAppointment = ScheduleAppointmentViewController()
+        
+        let navigationController = UINavigationController(rootViewController: scheduleAppointment)
+        navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.isHidden = true
+        navigationController.interactivePopGestureRecognizer?.isEnabled = false
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window
+        else {return}
+        UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
+            window.rootViewController = navigationController
+        }, completion: nil)
+        
     }
     
     func constrainButtonsStackView() {
@@ -94,14 +136,10 @@ class MainMenuViewController: UIViewController {
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             stackView.heightAnchor.constraint(equalToConstant: 225),
             stackView.widthAnchor.constraint(equalToConstant: 225)
-        
-        
-        
-        
+            
         ])
         
     }
-    
     
     
     func constrainLogo() {
@@ -112,14 +150,11 @@ class MainMenuViewController: UIViewController {
             logoImage.widthAnchor.constraint(equalToConstant: 50),
             logoImage.heightAnchor.constraint(equalToConstant: 50)
             
-            
         ])
         
         
     }
     
     
-   
-   
-
+    
 }
