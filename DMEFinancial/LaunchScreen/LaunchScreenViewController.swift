@@ -75,7 +75,7 @@ class LaunchScreenViewController: UIViewController {
     
     func animate() {
         UIView.animate(withDuration: 1, animations: {
-            let size = self.view.frame.size.width * 2
+            let size = self.view.frame.size.width * 1
             let diffX = size - self.view.frame.size.width
             let diffY = self.view.frame.size.height - size
             
@@ -88,6 +88,22 @@ class LaunchScreenViewController: UIViewController {
             )
             
     
+            
+        })
+        
+        UIView.animate(withDuration: 3, animations: {
+            self.logoImage.alpha = 0
+        }, completion: { done in
+            if done {
+                DispatchQueue.main.asyncAfter(deadline: .now()+0.3, execute: {
+                    let viewController = HomeViewController()
+                    viewController.modalTransitionStyle = .crossDissolve
+                    viewController.modalPresentationStyle = .fullScreen
+                    self.present(viewController, animated: true)
+                    
+                })
+                
+            }
             
         })
         
