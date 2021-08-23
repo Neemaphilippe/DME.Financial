@@ -9,9 +9,15 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
     
-    // Buttons
-    // aboutUs
-    // services offered
+    
+    lazy var logoImage: UIImageView = {
+        let logo = UIImageView()
+        logo.image = UIImage(named: "DMELogo")
+        logo.layer.zPosition = 1
+        
+        return logo
+        
+    }()
     
     lazy var aboutUsButton: UIButton = {
         let button = UIButton()
@@ -54,12 +60,12 @@ class MainMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        view.addSubview(logoImage)
         view.addSubview(aboutUsButton)
         view.addSubview(servicesButton)
         view.addSubview(scheduleAppointmentButton)
         constrainButtonsStackView()
-        constrainServicesOfferedButton()
-        constrainAppointmentButton()
+        constrainLogo()
 
     }
     
@@ -96,15 +102,24 @@ class MainMenuViewController: UIViewController {
         
     }
     
-    func constrainServicesOfferedButton() {
+    
+    
+    func constrainLogo() {
+        logoImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            logoImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoImage.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 200),
+            logoImage.widthAnchor.constraint(equalToConstant: 50),
+            logoImage.heightAnchor.constraint(equalToConstant: 50)
+            
+            
+        ])
+        
         
     }
     
-    func constrainAppointmentButton() {
-        
-    }
-
     
+   
    
 
 }
