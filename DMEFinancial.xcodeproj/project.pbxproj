@@ -16,6 +16,7 @@
 		5571008126D3F62100B19720 /* DMEFinancialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571008026D3F62100B19720 /* DMEFinancialTests.swift */; };
 		5571008C26D3F62100B19720 /* DMEFinancialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571008B26D3F62100B19720 /* DMEFinancialUITests.swift */; };
 		557100A026D3FEDE00B19720 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571009F26D3FEDE00B19720 /* LaunchScreenViewController.swift */; };
+		557100A926D424B000B19720 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557100A826D424B000B19720 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		5571008B26D3F62100B19720 /* DMEFinancialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMEFinancialUITests.swift; sourceTree = "<group>"; };
 		5571008D26D3F62100B19720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5571009F26D3FEDE00B19720 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		557100A826D424B000B19720 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		5571006826D3F61E00B19720 /* DMEFinancial */ = {
 			isa = PBXGroup;
 			children = (
+				557100A426D423E300B19720 /* LaunchScreen */,
 				5571006926D3F61E00B19720 /* AppDelegate.swift */,
 				5571006B26D3F61E00B19720 /* SceneDelegate.swift */,
 				5571006D26D3F61E00B19720 /* ViewController.swift */,
@@ -108,7 +111,6 @@
 				5571007226D3F62100B19720 /* Assets.xcassets */,
 				5571007426D3F62100B19720 /* LaunchScreen.storyboard */,
 				5571007726D3F62100B19720 /* Info.plist */,
-				5571009F26D3FEDE00B19720 /* LaunchScreenViewController.swift */,
 			);
 			path = DMEFinancial;
 			sourceTree = "<group>";
@@ -129,6 +131,15 @@
 				5571008D26D3F62100B19720 /* Info.plist */,
 			);
 			path = DMEFinancialUITests;
+			sourceTree = "<group>";
+		};
+		557100A426D423E300B19720 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5571009F26D3FEDE00B19720 /* LaunchScreenViewController.swift */,
+				557100A826D424B000B19720 /* HomeViewController.swift */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				557100A926D424B000B19720 /* HomeViewController.swift in Sources */,
 				5571006E26D3F61E00B19720 /* ViewController.swift in Sources */,
 				5571006A26D3F61E00B19720 /* AppDelegate.swift in Sources */,
 				557100A026D3FEDE00B19720 /* LaunchScreenViewController.swift in Sources */,
