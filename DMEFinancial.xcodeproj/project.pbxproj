@@ -22,6 +22,7 @@
 		557100BB26D461E100B19720 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557100BA26D461E100B19720 /* AboutUsViewController.swift */; };
 		557100C026D4620E00B19720 /* ServicesOfferedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557100BF26D4620E00B19720 /* ServicesOfferedViewController.swift */; };
 		557100C526D4622500B19720 /* ScheduleAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557100C426D4622500B19720 /* ScheduleAppointmentViewController.swift */; };
+		557100CA26D4652400B19720 /* NavTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557100C926D4652400B19720 /* NavTitles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		557100BA26D461E100B19720 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		557100BF26D4620E00B19720 /* ServicesOfferedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesOfferedViewController.swift; sourceTree = "<group>"; };
 		557100C426D4622500B19720 /* ScheduleAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAppointmentViewController.swift; sourceTree = "<group>"; };
+		557100C926D4652400B19720 /* NavTitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTitles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				557100B526D45E7600B19720 /* NavigationController.swift */,
+				557100C926D4652400B19720 /* NavTitles.swift */,
 			);
 			path = NavigationViews;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				557100BB26D461E100B19720 /* AboutUsViewController.swift in Sources */,
 				557100AF26D4359700B19720 /* MainMenuViewController.swift in Sources */,
 				557100A926D424B000B19720 /* HomeViewController.swift in Sources */,
+				557100CA26D4652400B19720 /* NavTitles.swift in Sources */,
 				5571006E26D3F61E00B19720 /* ViewController.swift in Sources */,
 				5571006A26D3F61E00B19720 /* AppDelegate.swift in Sources */,
 				557100C526D4622500B19720 /* ScheduleAppointmentViewController.swift in Sources */,

@@ -17,20 +17,23 @@ class HomeViewController: UIViewController {
             label.textColor = .white
             label.backgroundColor = #colorLiteral(red: 0.102643542, green: 0.1917873919, blue: 0.3815593719, alpha: 1)
             label.translatesAutoresizingMaskIntoConstraints = false
-    
             return label
-    
-    
     
         }()
     
    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(welcomeLabel)
         setLabelConstraints()
         view.backgroundColor = #colorLiteral(red: 0.102643542, green: 0.1917873919, blue: 0.3815593719, alpha: 1)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+1.5, execute: {
+        let vc = MainMenuViewController()
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true, completion: nil)
+        })
     }
     
         func setLabelConstraints() {
@@ -42,6 +45,8 @@ class HomeViewController: UIViewController {
     
             ])
         }
+    
+    
     
 
 

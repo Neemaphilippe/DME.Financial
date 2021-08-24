@@ -26,9 +26,8 @@ class MainMenuViewController: UIViewController {
         button.setTitle("About Us", for: .normal)
         button.addTarget(self, action: #selector(aboutUsButtonPressed), for: .touchUpInside)
         button.titleLabel?.adjustsFontSizeToFitWidth = true
-        button.backgroundColor = #colorLiteral(red: 0.03614688292, green: 0.09370104223, blue: 0.5110729933, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.102643542, green: 0.1917873919, blue: 0.3815593719, alpha: 1)
         button.titleLabel?.font = UIFont(name: "MalayalamSangamMN-Bold", size: 24)
-
         return button
     }()
 
@@ -38,7 +37,7 @@ class MainMenuViewController: UIViewController {
         button.layer.borderWidth = 1
         button.setTitle("Services ", for: .normal)
         button.addTarget(self, action: #selector(servicesButtonPressed), for: .touchUpInside)
-        button.backgroundColor = #colorLiteral(red: 0.03614688292, green: 0.09370104223, blue: 0.5110729933, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.102643542, green: 0.1917873919, blue: 0.3815593719, alpha: 1)
         button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.titleLabel?.font = UIFont(name: "MalayalamSangamMN-Bold", size: 24)
         return button
@@ -50,7 +49,7 @@ class MainMenuViewController: UIViewController {
         button.layer.borderWidth = 1
         button.setTitle("Schedule an Appointment", for: .normal)
         button.addTarget(self, action: #selector(appointmentButtonPressed), for: .touchUpInside)
-        button.backgroundColor = #colorLiteral(red: 0.03614688292, green: 0.09370104223, blue: 0.5110729933, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.102643542, green: 0.1917873919, blue: 0.3815593719, alpha: 1)
         button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.titleLabel?.font = UIFont(name: "MalayalamSangamMN-Bold", size: 24)
         return button
@@ -66,18 +65,27 @@ class MainMenuViewController: UIViewController {
         view.addSubview(scheduleAppointmentButton)
         constrainButtonsStackView()
         constrainLogo()
+        
+        
+        self.navigationItem.title = NavBarTitle.main.rawValue 
 
     }
     
     @objc func aboutUsButtonPressed() {
         // segue to about us detail vc
         let aboutUsVC = AboutUsViewController()
+        aboutUsVC.title = "About Us"
         
+//        let navigationController = UINavigationController(rootViewController: aboutUsVC)
+//        present(navigationController, animated: true)
+//        navigationController.modalPresentationStyle = .fullScreen
+        
+//        navigationController.navigationBar.isTranslucent = false
+//        navigationController.navigationBar.isHidden = true
+//        navigationController.interactivePopGestureRecognizer?.isEnabled = false
         let navigationController = UINavigationController(rootViewController: aboutUsVC)
-        navigationController.navigationBar.isTranslucent = false
-        navigationController.navigationBar.isHidden = true
-        navigationController.interactivePopGestureRecognizer?.isEnabled = false
-        
+        navigationController.modalPresentationStyle = .fullScreen
+//
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
             let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window
             else {return}
@@ -89,12 +97,14 @@ class MainMenuViewController: UIViewController {
     
     @objc func servicesButtonPressed() {
         // segue to services offered vc of table/collection view
-        let servicesOffered = ServicesOfferedViewController()
+        let servicesOfferedVC = ServicesOfferedViewController()
+        servicesOfferedVC.title = "Services Offered"
         
-        let navigationController = UINavigationController(rootViewController: servicesOffered)
-        navigationController.navigationBar.isTranslucent = false
-        navigationController.navigationBar.isHidden = true
-        navigationController.interactivePopGestureRecognizer?.isEnabled = false
+        let navigationController = UINavigationController(rootViewController: servicesOfferedVC)
+//        navigationController.navigationBar.isTranslucent = false
+//        navigationController.navigationBar.isHidden = true
+//        navigationController.interactivePopGestureRecognizer?.isEnabled = false
+        navigationController.modalPresentationStyle = .fullScreen
         
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window

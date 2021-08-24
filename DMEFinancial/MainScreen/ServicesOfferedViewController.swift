@@ -12,19 +12,21 @@ class ServicesOfferedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+        self.navigationItem.title = NavBarTitle.servicesOffered.rawValue
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Dismiss", style: .plain, target: self, action: #selector(dismissSelf))
 
-        // Do any additional setup after loading the view.
+        
+    }
+    
+    @objc private func dismissSelf() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window
+        else {return}
+        UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
+            window.rootViewController = MainMenuViewController()
+        }, completion: nil)
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

@@ -8,23 +8,23 @@
 import UIKit
 
 class AboutUsViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .link
-
-        // Do any additional setup after loading the view.
+        self.navigationItem.title = NavBarTitle.aboutUs.rawValue
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Dismiss", style: .plain, target: self, action: #selector(dismissSelf))
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @objc private func dismissSelf() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window
+        else {return}
+        UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
+            window.rootViewController = MainMenuViewController()
+        }, completion: nil)
     }
-    */
-
+    
+    
 }
